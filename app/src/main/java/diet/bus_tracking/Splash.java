@@ -22,14 +22,13 @@ public class Splash extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash);
-/*
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 Intent login = new Intent(Splash.this,Login.class);
                 startActivity(login);
             }
-        },2000);*/
+        },2000);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -48,7 +47,6 @@ public class Splash extends Activity {
                     }
                 });
 
-        ;
 
         myRef = myRef.child("second").child("name");
         String id = myRef.push().getKey();

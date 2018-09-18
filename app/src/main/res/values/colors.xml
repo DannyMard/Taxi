@@ -19,4 +19,6 @@
     <color name="logo_tint">#BE3B3B</color>
     <color name="tint_logo">#653877</color>
     <color name="green">#008000</color>
+    <color name="forestgreen">#28A745</color>
+    <color name="yellow">#FFFF00</color>
 </resources>
