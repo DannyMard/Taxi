@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "403612636905",
+    "firebase_url": "https://bustracker-b2471.firebaseio.com",
+    "project_id": "bustracker-b2471",
+    "storage_bucket": "bustracker-b2471.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:403612636905:android:4905ce1e014f71fc",
+        "android_client_info": {
+          "package_name": "diet.bus_tracking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "403612636905-l9jl7u2a04m9lslbv9nr2g7gkl660q6g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "diet.bus_tracking",
+            "certificate_hash": "4fe558ed438edd409d3c38b0a8cb4fad6a1e2558"
+          }
+        },
+        {
+          "client_id": "403612636905-2shj4fkrbironn89kgv18vckls27dvrc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_5tPcBR2S8Vgy_qo9-3HYWpsO5sF4j-Y"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "403612636905-2shj4fkrbironn89kgv18vckls27dvrc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
