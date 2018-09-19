@@ -75,6 +75,7 @@
                 android:textColorHint="@color/white">
 
                 <EditText
+                    android:id="@+id/email_et_login"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:hint="Email"
@@ -97,7 +98,7 @@
                 app:passwordToggleTint="@color/white">
 
                 <EditText
-
+                    android:id="@+id/password_et_login"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:hint="Password"

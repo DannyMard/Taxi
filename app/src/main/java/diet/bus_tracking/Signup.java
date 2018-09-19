@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.view.View;
@@ -67,38 +68,48 @@ public class Signup extends Activity implements View.OnClickListener {
                 startActivity(login);
                 break;
             case R.id.continue_btn:
-                if (name_et.getText().toString().length() == 0 ){
-                     showDialog(Signup.this,"Please Enter Name ","no");
-                }else if (email_et.getText().toString().length() == 0){
-                    showDialog(Signup.this,"Please Enter Valid Email ","no");
-                }else if (isValidEmail(email_et.getText().toString())){
-                    showDialog(Signup.this,"Please Enter Valid Email Address ","no");
-                }else if (phoneno_et.getText().toString().length() == 0 ){
-                    showDialog(Signup.this,"Please Enter Valid Phone Number ","no");
-                }else if (password_et.getText().toString().length() == 0){
-                    showDialog(Signup.this,"Please Enter Password ","no");
-                }else {
+                if (name_et.getText().toString().length() == 0) {
+                    showDialog(Signup.this, "Please Enter Name ", "no");
+                } else if (email_et.getText().toString().length() == 0) {
+                    showDialog(Signup.this, "Please Enter Valid Email ", "no");
+                } else if (!isValidEmail(email_et.getText().toString())) {
+                    showDialog(Signup.this, "Please Enter Valid Email Address ", "no");
+                } else if (phoneno_et.getText().toString().length() == 0) {
+                    showDialog(Signup.this, "Please Enter Valid Phone Number ", "no");
+                } else if (password_et.getText().toString().length() == 0) {
+                    showDialog(Signup.this, "Please Enter Password ", "no");
+                } else {
 
 
                     String id = myRef.push().getKey();
-                    Details details = new Details(name_et.getText().toString(),email_et.getText().toString(),phoneno_et.getText().toString(),password_et.getText().toString());
+                    Details details = new Details(name_et.getText().toString(), email_et.getText().toString(), phoneno_et.getText().toString(), password_et.getText().toString());
                     myRef.child(id).setValue(details);
                     progressDialog.setMessage("Please Wait");
                     progressDialog.show();
 
-                    mAuth.createUserWithEmailAndPassword(email_et.getText().toString(),password_et.getText().toString())
+                    mAuth.createUserWithEmailAndPassword(email_et.getText().toString(), password_et.getText().toString())
                             .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
+
                                     if (task.isSuccessful()) {
                                         progressDialog.dismiss();
                                         //finish();
-
-
+                                        System.out.println("hellow " + task.isSuccessful());
+                                        System.out.println("hellowxy " + task.getResult());
+                                        System.out.println("successyyy " + task.getResult().getUser().getEmail() + "Phone " +
+                                                task.getResult().getUser().getPhoneNumber());
+                                        SharedPreferences.Editor users = getSharedPreferences("Details", MODE_PRIVATE).edit();
+                                        users.putString("email", task.getResult().getUser().getEmail());
+                                        users.commit();
+                                        Intent login = new Intent(Signup.this, Home.class);
+                                        startActivity(login);
                                     } else {
+                                        System.out.println("hellow " + task.getResult());
+                                        System.out.println("hellowaskdflsadf " + task.getResult().getUser());
                                         progressDialog.dismiss();
                                         // If sign in fails, display a message to the user.
-                                        showDialog(Signup.this,"Sorry Email Already Exists !!", "no");
+                                        showDialog(Signup.this, "Sorry Email Already Exists !!", "no");
                                         // Toast.makeText(RegisterActivity.this, "Email Already Exists.",
                                         //        Toast.LENGTH_SHORT).show();
 

@@ -1,6 +1,8 @@
 package diet.bus_tracking;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,6 +10,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -23,12 +26,14 @@ public class Home extends Activity implements View.OnClickListener {
     RecyclerView stations_rv;
     ArrayList<Stations> stations;
     Station_Adapter station_adapter;
+    Button bustimng_btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
         menu_img = (ImageView) findViewById(R.id.menu_img);
-
+        bustimng_btn = (Button) findViewById(R.id.bustimng_btn);
+        bustimng_btn.setOnClickListener(this);
         menu_img.setOnClickListener(this);
 
         home = (DrawerLayout) findViewById(R.id.home);
@@ -46,20 +51,20 @@ public class Home extends Activity implements View.OnClickListener {
         stations_rv = (RecyclerView) findViewById(R.id.stations_rv);
         stations_rv.setLayoutManager(new LinearLayoutManager(Home.this));
         stations = new ArrayList<Stations>();
-        stations.add(new Stations("12:00","1:00",".05",".10","start","0 Km"));
-        stations.add(new Stations("12:00","1:00",".05",".10","vizag","20 Km"));
-        stations.add(new Stations("12:00","1:00",".05",".10","gurdwara","20 Km"));
-        stations.add(new Stations("12:00","1:00",".05",".10","kancharapalem","20 Km"));
-        stations.add(new Stations("12:00","1:00",".05",".10","politechical college","20 Km"));
-        stations.add(new Stations("12:00","1:00",".05",".10","Nad","20 Km"));
-        stations.add(new Stations("12:00","1:00",".05",".10","Srinagar","20 Km"));
-        stations.add(new Stations("12:00","1:00",".05",".10","Gajuwaka","20 Km"));
-        stations.add(new Stations("12:00","1:00",".05",".10","Nathayapalem","20 Km"));
-        stations.add(new Stations("12:00","1:00",".05",".10","Kurmanapalem","20 Km"));
-        stations.add(new Stations("12:00","1:00",".05",".10","lankelapalem","20 Km"));
-        stations.add(new Stations("12:00","1:00",".05",".10","Anakapalle","20 Km"));
+        stations.add(new Stations("12:00", "1:00", ".05", ".10", "start", "0 Km"));
+        stations.add(new Stations("12:00", "1:00", ".05", ".10", "vizag", "20 Km"));
+        stations.add(new Stations("12:00", "1:00", ".05", ".10", "gurdwara", "20 Km"));
+        stations.add(new Stations("12:00", "1:00", ".05", ".10", "kancharapalem", "20 Km"));
+        stations.add(new Stations("12:00", "1:00", ".05", ".10", "politechical college", "20 Km"));
+        stations.add(new Stations("12:00", "1:00", ".05", ".10", "Nad", "20 Km"));
+        stations.add(new Stations("12:00", "1:00", ".05", ".10", "Srinagar", "20 Km"));
+        stations.add(new Stations("12:00", "1:00", ".05", ".10", "Gajuwaka", "20 Km"));
+        stations.add(new Stations("12:00", "1:00", ".05", ".10", "Nathayapalem", "20 Km"));
+        stations.add(new Stations("12:00", "1:00", ".05", ".10", "Kurmanapalem", "20 Km"));
+        stations.add(new Stations("12:00", "1:00", ".05", ".10", "lankelapalem", "20 Km"));
+        stations.add(new Stations("12:00", "1:00", ".05", ".10", "Anakapalle", "20 Km"));
 
-        station_adapter = new Station_Adapter(Home.this,stations,R.layout.station_single);
+        station_adapter = new Station_Adapter(Home.this, stations, R.layout.station_single);
         stations_rv.setAdapter(station_adapter);
     }
 
@@ -69,6 +74,17 @@ public class Home extends Activity implements View.OnClickListener {
             case R.id.menu_img:
                 home.openDrawer(myll);
                 break;
+            case R.id.bustimng_btn:
+                Intent bustimings = new Intent(Home.this,BusTimings.class);
+                startActivity(bustimings);
+                break;
         }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        SharedPreferences users = getSharedPreferences("Details", MODE_PRIVATE);
+        users.getString("email", "");
     }
 }

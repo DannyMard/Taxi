@@ -35,6 +35,7 @@ public class Splash extends Activity {
 
         myRef = FirebaseDatabase.getInstance().getReference("Sams");
 
+/*
         mAuth.createUserWithEmailAndPassword("dadi@gmail.com", "dadi@123")
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -46,6 +47,7 @@ public class Splash extends Activity {
                         }
                     }
                 });
+*/
 
 
         myRef = myRef.child("second").child("name");

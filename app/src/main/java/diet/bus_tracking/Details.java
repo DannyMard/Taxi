@@ -2,7 +2,7 @@ package diet.bus_tracking;
 
 public class Details {
     String name,email,phoneno,password;
-
+ public Details(){}
     public Details(String name, String email, String phoneno, String password) {
         this.name = name;
         this.email = email;

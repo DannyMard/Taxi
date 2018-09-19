@@ -20,7 +20,8 @@
         <activity android:name=".Signup" />
         <activity android:name=".MyProfile" />
         <activity android:name=".Forgotpassword" />
-        <activity android:name=".Home"></activity>
+        <activity android:name=".Home" />
+        <activity android:name=".BusTimings"></activity>
     </application>
 
 </manifest>
