@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
@@ -37,7 +38,7 @@ import static android.support.constraint.Constraints.TAG;
 
 public class Login extends Activity implements View.OnClickListener {
     TextView signup_tv, forgotpassword_tv;
-    Button login_btn;
+    FloatingActionButton login_btn;
     EditText password_et_login, email_et_login;
     FirebaseAuth mAuth;
     FirebaseAuth.AuthStateListener authStateListener;
@@ -51,7 +52,7 @@ public class Login extends Activity implements View.OnClickListener {
 
         email_et_login = (EditText) findViewById(R.id.email_et_login);
         password_et_login = (EditText) findViewById(R.id.password_et_login);
-        login_btn = (Button) findViewById(R.id.login_btn);
+        login_btn = (FloatingActionButton) findViewById(R.id.login_btn);
         login_btn.setOnClickListener(this);
         forgotpassword_tv = (TextView) findViewById(R.id.forgotpassword_tv);
         forgotpassword_tv.setOnClickListener(this);

@@ -4,24 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/diet_blur"
+    android:background="@drawable/finalbg"
     android:gravity="center"
     android:orientation="vertical"
     tools:co1ntext=".Splash">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="32dp"
         android:gravity="center">
 
-        <ImageView
-            android:layout_width="120dp"
+        <android.support.v7.widget.CardView
+            android:layout_width="100dp"
             android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:src="@drawable/diet" />
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:src="@drawable/diet" />
+        </android.support.v7.widget.CardView>
     </LinearLayout>
 
     <LinearLayout
@@ -30,13 +35,25 @@
         android:gravity="center"
         android:orientation="vertical">
 
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_alignParentBottom="true"
-            android:layout_gravity="center"
-            android:src="@drawable/map_mark" />
+        <!-- <ImageView
+             android:layout_width="50dp"
+             android:layout_height="50dp"
+             android:layout_alignParentBottom="true"
+             android:layout_gravity="center"
+             android:src="@drawable/map_mark" />
 
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="100dp"
+             android:gravity="center"
+             android:orientation="horizontal">
+
+             <ImageView
+                 android:layout_width="100dp"
+                 android:layout_height="match_parent"
+                 android:layout_gravity="center"
+                 android:src="@drawable/bus" />
+         </LinearLayout>-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="100dp"
@@ -47,7 +64,7 @@
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:src="@drawable/bus" />
+                android:src="@drawable/logo_bus" />
         </LinearLayout>
 
         <LinearLayout
@@ -63,7 +80,7 @@
                 android:gravity="center"
                 android:text="GPS"
                 android:textAllCaps="false"
-                android:textColor="@color/white"
+                android:textColor="@color/orange"
                 android:textSize="28dp"
                 android:textStyle="bold" />
 
@@ -73,7 +90,7 @@
                 android:gravity="center"
                 android:text="@string/splash"
                 android:textAllCaps="false"
-                android:textColor="@color/white"
+                android:textColor="@color/orange"
                 android:textSize="32dp"
                 android:textStyle="bold" />
 
@@ -94,7 +111,7 @@
             android:gravity="center"
             android:text="GPS"
             android:textAllCaps="false"
-            android:textColor="@color/white"
+            android:textColor="@color/orange"
             android:textSize="28dp"
             android:textStyle="bold" />
 
@@ -104,7 +121,7 @@
             android:gravity="center"
             android:text="@string/splash"
             android:textAllCaps="false"
-            android:textColor="@color/white"
+            android:textColor="@color/orange"
             android:textSize="32dp"
             android:textStyle="bold" />
 
