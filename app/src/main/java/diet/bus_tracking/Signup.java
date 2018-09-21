@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -27,7 +28,7 @@ import java.util.regex.Pattern;
 public class Signup extends Activity implements View.OnClickListener {
     TextView login_tv;
     EditText name_et, email_et, phoneno_et, password_et;
-    Button continue_btn;
+    FloatingActionButton registration_btn;
 
     FirebaseAuth mAuth;
     FirebaseDatabase database;
@@ -45,8 +46,8 @@ public class Signup extends Activity implements View.OnClickListener {
         login_tv = (TextView) findViewById(R.id.login_tv);
         login_tv.setOnClickListener(this);
 
-        continue_btn = (Button) findViewById(R.id.continue_btn);
-        continue_btn.setOnClickListener(this);
+        registration_btn = (FloatingActionButton) findViewById(R.id.registration_btn);
+        registration_btn.setOnClickListener(this);
 
 
         name_et = (EditText) findViewById(R.id.name_et);
@@ -67,7 +68,7 @@ public class Signup extends Activity implements View.OnClickListener {
                 Intent login = new Intent(Signup.this, Login.class);
                 startActivity(login);
                 break;
-            case R.id.continue_btn:
+            case R.id.registration_btn:
                 if (name_et.getText().toString().length() == 0) {
                     showDialog(Signup.this, "Please Enter Name ", "no");
                 } else if (email_et.getText().toString().length() == 0) {

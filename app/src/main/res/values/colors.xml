@@ -21,6 +21,7 @@
     <color name="green">#008000</color>
     <color name="forestgreen">#28A745</color>
     <color name="yellow">#FFFF00</color>
-    <color name="orange">#D57440</color>
+    <color name="orange">#DD9546</color>
     <color name="skylight">#5C8BB2</color>
+    <color name="map_mark">#7BB8D3</color>
 </resources>

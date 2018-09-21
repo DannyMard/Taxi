@@ -12,45 +12,91 @@
         android:layout_height="match_parent">
 
         <include layout="@layout/header_home"></include>
+
         <LinearLayout
             android:id="@+id/myll_ll"
-            android:layout_marginTop="60dp"
-            android:weightSum="2"
-            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="55dp">
-            <ImageView
-                android:layout_weight="1.8"
-                android:src="@drawable/bus"
+            android:layout_height="150dp"
+            android:layout_marginTop="60dp"
+            android:orientation="vertical"
+            android:weightSum="2">
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-            <Spinner
-                android:layout_weight=".2"
-                android:id="@+id/bus_spinner"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/login_bg"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".5"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="Track bus on map view"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="end"
+                    android:layout_weight="1.5"
+                    android:padding="5dp"
+                    android:src="@drawable/map_mark" />
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="55dp"></Spinner>
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.8"
+                    android:src="@drawable/bus" />
+
+                <Spinner
+                    android:id="@+id/bus_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".2"></Spinner>
+            </LinearLayout>
+
+
         </LinearLayout>
+
         <android.support.v7.widget.RecyclerView
-            android:layout_below="@+id/myll_ll"
             android:id="@+id/stations_rv"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_below="@+id/myll_ll">
 
         </android.support.v7.widget.RecyclerView>
 
     </RelativeLayout>
 
     <RelativeLayout
+        android:layout_gravity="start"
         android:id="@+id/myll"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:layout_marginRight="45dp">
+        android:layout_marginRight="45dp"
+        android:background="@color/white">
 
         <LinearLayout
             android:id="@+id/content_ll"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="165dp"
+            android:background="@drawable/image_bg"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -58,16 +104,18 @@
                 android:id="@+id/photo_img"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:layout_gravity="center"
+                android:layout_gravity="start"
+                android:layout_marginLeft="16dp"
                 android:src="@drawable/diet" />
 
             <TextView
                 android:id="@+id/name_tv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
+                android:layout_marginLeft="16dp"
+                android:gravity="start"
                 android:text="Welcome Dadi"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
@@ -78,75 +126,126 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/content_ll"
-            android:background="@drawable/diet_blur"
+            android:background="@color/white"
             android:orientation="vertical">
 
-            <Button
-                android:id="@+id/bustimng_btn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
+            <LinearLayout
                 android:layout_marginTop="16dp"
-                android:background="@color/white"
-                android:text="Bus Timetable"
-                android:textSize="20dp"
-                android:textStyle="bold" />
+                android:id="@+id/bustimng_ll"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="1">
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_marginTop="16dp"
-                android:background="@color/white"
-                android:text="Language"
-                android:textSize="20dp"
-                android:textStyle="bold" />
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".8"
+                    android:padding="5dp"
+                    android:src="@drawable/timetable" />
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_marginTop="16dp"
-                android:background="@color/white"
-                android:text="Share App"
-                android:textSize="20dp"
-                android:textStyle="bold" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight=".2"
+                    android:background="@color/white"
+                    android:gravity="start|center"
+                    android:text="Bus Timetable"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_marginTop="16dp"
-                android:background="@color/white"
-                android:text="Suggest a feature"
-                android:textSize="20dp"
-                android:textStyle="bold" />
+            </LinearLayout>
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
+            <LinearLayout
                 android:layout_marginTop="16dp"
-                android:background="@color/white"
-                android:text="Share App"
-                android:textSize="20dp"
-                android:textStyle="bold" />
+                android:id="@+id/shareapp_ll"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="1">
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".8"
+                    android:padding="5dp"
+                    android:src="@drawable/shareapp" />
+
+                <TextView
+                    android:id="@+id/shareapp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight=".2"
+                    android:background="@color/white"
+                    android:gravity="start|center"
+                    android:text="Share App"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_marginTop="16dp"
-                android:background="@color/white"
-                android:text="Logout"
-                android:textSize="20dp"
-                android:textStyle="bold" />
+                android:id="@+id/suggest_ll"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".8"
+                    android:padding="5dp"
+                    android:src="@drawable/suggest" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight=".2"
+                    android:background="@color/white"
+                    android:gravity="start|center"
+                    android:text="Suggest a feature"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="16dp"
+                android:id="@+id/logout_ll"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".8"
+                    android:padding="5dp"
+                    android:src="@drawable/poweroff" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight=".2"
+                    android:background="@color/white"
+                    android:gravity="start|center"
+                    android:text="Logout"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
 
         </LinearLayout>
 

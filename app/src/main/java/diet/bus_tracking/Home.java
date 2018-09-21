@@ -26,17 +26,24 @@ public class Home extends Activity implements View.OnClickListener {
     RecyclerView stations_rv;
     ArrayList<Stations> stations;
     Station_Adapter station_adapter;
-    Button bustimng_btn;
+    Button logout_btn;
+    LinearLayout bustimng_ll,shareapp_ll,suggest_ll,logout_ll;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
         menu_img = (ImageView) findViewById(R.id.menu_img);
-        bustimng_btn = (Button) findViewById(R.id.bustimng_btn);
-        bustimng_btn.setOnClickListener(this);
         menu_img.setOnClickListener(this);
-
+        suggest_ll = (LinearLayout) findViewById(R.id.suggest_ll);
+        suggest_ll.setOnClickListener(this);
+        shareapp_ll = (LinearLayout) findViewById(R.id.shareapp_ll);
+        shareapp_ll.setOnClickListener(this);
+        logout_ll = (LinearLayout) findViewById(R.id.logout_ll);
+        logout_ll.setOnClickListener(this);
+        bustimng_ll  = (LinearLayout) findViewById(R.id.bustimng_ll);
+        bustimng_ll.setOnClickListener(this);
         home = (DrawerLayout) findViewById(R.id.home);
+
         myll = (RelativeLayout) findViewById(R.id.myll);
         bus_spinner = (Spinner) findViewById(R.id.bus_spinner);
         stations_rv = (RecyclerView) findViewById(R.id.stations_rv);
@@ -74,9 +81,15 @@ public class Home extends Activity implements View.OnClickListener {
             case R.id.menu_img:
                 home.openDrawer(myll);
                 break;
-            case R.id.bustimng_btn:
+            case R.id.bustimng_ll:
                 Intent bustimings = new Intent(Home.this,BusTimings.class);
                 startActivity(bustimings);
+                break;
+            case R.id.logout_ll:
+                SharedPreferences.Editor users = getSharedPreferences("Details", MODE_PRIVATE).edit();
+                users.putString("email", "");
+                users.commit();
+                finish();
                 break;
         }
     }
