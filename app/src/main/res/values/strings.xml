@@ -3,18 +3,23 @@
     <string name="splash"> Bus Tracking System</string>
     <string-array name="buses">
         <item>Select Bus</item>
-        <item>Bus-01</item>
-        <item>Bus-02</item>
-        <item>Bus-03</item>
-        <item>Bus-04</item>
-        <item>Bus-05</item>
-        <!--  <item>06</item>
-        <item>07</item>
-        <item>08</item>
-        <item>09</item>
-        <item>10</item>
-        <item>11</item>
-        <item>12</item>
-        <item>13</item>-->
+        <item>BUS-01</item>
+        <item>BUS-02</item>
+        <item>BUS-03</item>
+        <item>BUS-04</item>
+        <item>BUS-05</item>
+        <item>BUS-06</item>
+        <item>BUS-07</item>
+        <item>BUS-08</item>
+        <item>BUS-09</item>
+        <item>BUS-10</item>
+        <item>BUS-11</item>
+        <item>BUS-12</item>
+        <item>BUS-13</item>
+        <item>BUS-14</item>
+        <item>BUS-15</item>
+        <item>BUS-16</item>
+        <item>BUS-17</item>
     </string-array>
+    <string name="title_activity_maps">Map</string>
 </resources>

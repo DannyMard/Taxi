@@ -1,15 +1,24 @@
 package diet.bus_tracking;
 
 public class Stations {
-    String starttime,endtime,delaystarttime,delayendtime,destinaation,distance;
+    String starttime,endtime,delaystarttime,delayendtime,destinaation,distance,busno;
 
-    public Stations(String starttime, String endtime, String delaystarttime, String delayendtime, String destinaation, String distance) {
+   /* public Stations(String starttime, String endtime, String delaystarttime, String delayendtime, String destinaation, String distance) {
         this.starttime = starttime;
         this.endtime = endtime;
         this.delaystarttime = delaystarttime;
         this.delayendtime = delayendtime;
         this.destinaation = destinaation;
         this.distance = distance;
+    }*/
+   public Stations(String bustop,String timing,String busno){
+       this.destinaation = bustop;
+       this.starttime  = timing;
+       this.busno = busno;
+   }
+
+    public String getBusno() {
+        return busno;
     }
 
     public String getStarttime() {

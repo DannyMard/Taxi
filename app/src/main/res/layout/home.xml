@@ -42,6 +42,8 @@
                     android:textStyle="bold" />
 
                 <ImageView
+
+                    android:id="@+id/map_logo"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="end"
@@ -61,35 +63,54 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="1.8"
+                    android:layout_weight="1.7"
                     android:src="@drawable/bus" />
 
                 <Spinner
                     android:id="@+id/bus_spinner"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight=".2"></Spinner>
+                    android:layout_weight=".3"></Spinner>
             </LinearLayout>
 
 
         </LinearLayout>
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/stations_rv"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/myll_ll">
+            android:layout_below="@+id/myll_ll"
+            android:orientation="vertical">
 
-        </android.support.v7.widget.RecyclerView>
+            <TextView
+                android:id="@+id/start_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/red"
+                android:gravity="center"
+                android:text="Start"
+                android:textColor="@color/white"
+                android:textSize="34dp" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/stations_rv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/myll_ll"
+                android:background="@color/white">
+
+            </android.support.v7.widget.RecyclerView>
+        </LinearLayout>
+
 
     </RelativeLayout>
 
     <RelativeLayout
-        android:layout_gravity="start"
         android:id="@+id/myll"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginRight="45dp"
+        android:layout_gravity="start"
+        android:layout_marginRight="40dp"
         android:background="@color/white">
 
         <LinearLayout
@@ -130,10 +151,10 @@
             android:orientation="vertical">
 
             <LinearLayout
-                android:layout_marginTop="16dp"
                 android:id="@+id/bustimng_ll"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:layout_marginTop="16dp"
                 android:gravity="center"
                 android:orientation="horizontal"
                 android:weightSum="1">
@@ -142,7 +163,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight=".8"
-                    android:padding="5dp"
+                    android:padding="10dp"
                     android:src="@drawable/timetable" />
 
                 <TextView
@@ -152,17 +173,19 @@
                     android:layout_weight=".2"
                     android:background="@color/white"
                     android:gravity="start|center"
+                    android:padding="5dp"
                     android:text="Bus Timetable"
-                    android:textSize="20dp"
+                    android:textAllCaps="true"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_marginTop="16dp"
-                android:id="@+id/shareapp_ll"
+                android:id="@+id/profile_ll"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:layout_marginTop="16dp"
                 android:gravity="center"
                 android:orientation="horizontal"
                 android:weightSum="1">
@@ -171,7 +194,102 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight=".8"
+                    android:padding="10dp"
+                    android:src="@drawable/profile" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight=".2"
+                    android:background="@color/white"
+                    android:gravity="start|center"
                     android:padding="5dp"
+                    android:text="Profile"
+                    android:textAllCaps="true"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/setalarm_ll"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".8"
+                    android:padding="10dp"
+                    android:src="@drawable/alarm" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight=".2"
+                    android:background="@color/white"
+                    android:gravity="start|center"
+                    android:padding="5dp"
+                    android:text="Alarm"
+                    android:textAllCaps="true"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/stopalarm_ll"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".8"
+                    android:padding="10dp"
+                    android:src="@drawable/alarm" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight=".2"
+                    android:background="@color/white"
+                    android:gravity="start|center"
+                    android:padding="5dp"
+                    android:text="Stop Alarm"
+                    android:textAllCaps="true"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/shareapp_ll"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".8"
+                    android:padding="10dp"
                     android:src="@drawable/shareapp" />
 
                 <TextView
@@ -182,17 +300,19 @@
                     android:layout_weight=".2"
                     android:background="@color/white"
                     android:gravity="start|center"
+                    android:padding="5dp"
                     android:text="Share App"
-                    android:textSize="20dp"
+                    android:textAllCaps="true"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_marginTop="16dp"
                 android:id="@+id/suggest_ll"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:layout_marginTop="16dp"
                 android:gravity="center"
                 android:orientation="horizontal"
                 android:weightSum="1">
@@ -201,7 +321,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight=".8"
-                    android:padding="5dp"
+                    android:padding="10dp"
                     android:src="@drawable/suggest" />
 
                 <TextView
@@ -211,17 +331,19 @@
                     android:layout_weight=".2"
                     android:background="@color/white"
                     android:gravity="start|center"
+                    android:padding="5dp"
                     android:text="Suggest a feature"
-                    android:textSize="20dp"
+                    android:textAllCaps="true"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_marginTop="16dp"
                 android:id="@+id/logout_ll"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:layout_marginTop="16dp"
                 android:gravity="center"
                 android:orientation="horizontal"
                 android:weightSum="1">
@@ -230,7 +352,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight=".8"
-                    android:padding="5dp"
+                    android:padding="10dp"
                     android:src="@drawable/poweroff" />
 
                 <TextView
@@ -240,8 +362,10 @@
                     android:layout_weight=".2"
                     android:background="@color/white"
                     android:gravity="start|center"
+                    android:padding="5dp"
                     android:text="Logout"
-                    android:textSize="20dp"
+                    android:textAllCaps="true"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
 
             </LinearLayout>

@@ -120,8 +120,16 @@ public class Login extends Activity implements View.OnClickListener {
                                     Details models = postSnapshot.getValue(Details.class);
                                     System.out.println("dadi" + models.getEmail());
                                     SharedPreferences.Editor users = getSharedPreferences("Details", MODE_PRIVATE).edit();
+                                    users.putString("name", models.getName());
+                                    users.putString("phone", models.getPhoneno());
                                     users.putString("email", models.getEmail());
                                     users.commit();
+
+                                    SharedPreferences.Editor star = getSharedPreferences("STATUS", MODE_PRIVATE).edit();
+                                    star.putString("status", "start");
+                                    star.putString("busno", "");
+                                    star.commit();
+
                                     if (models.getPassword().toString().equals(password_et_login.getText().toString())){
                                         showDialog(Login.this, "Sucessfully Login", "yes");
                                     }else {

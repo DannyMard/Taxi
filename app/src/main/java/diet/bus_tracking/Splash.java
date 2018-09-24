@@ -81,10 +81,12 @@ public class Splash extends Activity implements View.OnClickListener {
 
                     Intent login = new Intent(Splash.this, Home.class);
                     startActivity(login);
+                    finish();
                 } else {
 
                     Intent login = new Intent(Splash.this, Login.class);
                     startActivity(login);
+                    finish();
                 }
                 break;
         }
